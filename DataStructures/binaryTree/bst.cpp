@@ -8,7 +8,6 @@ class Node{
         Node* left;
         Node* right;
         Node(int value): data(value) { right = nullptr; left = nullptr; }
-
 };
 
 class Tree{
@@ -82,6 +81,19 @@ class Tree{
             postOrderTraversal(root);
             cout << endl;
         }
+
+        int heightOfTree(Node* root, int length = 0){
+            if(root == nullptr) return length;
+            return heightOfTree(root -> left, length + 1);
+        }
+
+        int heightOfTree(){
+            return heightOfTree(root, 0);
+        }
+
+        int lengthOfTree(){
+            return heightOfTree(root, 0) + heightOfTree(root->right, 0);
+        }
 };
 
 int main(){
@@ -97,5 +109,7 @@ int main(){
     myList->inOrderTraversal();
     myList->postOrderTraversal();
     myList->lowOrderTraversal();
+    cout << "Height: " << myList->heightOfTree() << endl;
+    cout << "Length: " << myList->lengthOfTree() << endl;
     return 0;
 }
