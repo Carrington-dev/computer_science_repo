@@ -25,9 +25,11 @@ class Vector{
         } 
 
         void insert(int value){
-            if( size <= allocated){
+            if( allocated == size){
+                allocate();
                 data[size] = value;
-            }else{
+            }
+            else{
                 allocate();
                 data[size] = value;
             }
@@ -42,13 +44,13 @@ class Vector{
             return data[index];
         }
 
-        bool operator!=(Vector* other ){
-            return other != this;
-        }
+        // bool operator!=(Vector* other ){
+        //     return other != this;
+        // }
 
-        bool operator==(Vector* other ){
-            return other == this;
-        }
+        // bool operator==(Vector* other ){
+        //     return other == this;
+        // }
 
         void print(){
             for (int i = 0; i < size; i++)
