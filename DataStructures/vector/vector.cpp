@@ -6,6 +6,9 @@ class Vector{
     int size = 0, allocated = 0;
     int *data;
     public:
+        Vector(){
+            data = nullptr;
+        }
         void allocate(){
             if( allocated == 0){
                 allocated = 1;
@@ -25,8 +28,7 @@ class Vector{
         } 
 
         void insert(int value){
-            if( allocated == size){
-                allocate();
+            if( allocated < size){
                 data[size] = value;
             }
             else{
@@ -44,13 +46,13 @@ class Vector{
             return data[index];
         }
 
-        // bool operator!=(Vector* other ){
-        //     return other != this;
-        // }
+        bool operator!=(Vector* other ){
+            return other != this;
+        }
 
-        // bool operator==(Vector* other ){
-        //     return other == this;
-        // }
+        bool operator==(Vector* other ){
+            return other == this;
+        }
 
         void print(){
             for (int i = 0; i < size; i++)
@@ -67,6 +69,12 @@ int main(){
     for (int i = 0; i <= 20; i++)
     {
         dataList.insert(i);
+    }
+    dataList.print();
+    cout << endl;
+    for (int i = 10; i <= 20; i++)
+    {
+        dataList[i] = (i * 2);
     }
     dataList.print();
     cout << endl;
