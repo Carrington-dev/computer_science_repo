@@ -28,7 +28,7 @@ class Tree{
                 return head;
             }
 
-            if( head -> data < value){
+            if( head -> data > value){
                 head -> left = insert( head-> left, value);
             }else{
                 head -> right = insert( head-> right, value);
@@ -57,6 +57,16 @@ class Tree{
             cout << root -> data << " ";
             inOrderTraversal(root ->right);
         }
+        void lowOrderTraversal(Node* root){
+            if(root == nullptr) return;
+            lowOrderTraversal(root ->right);
+            cout << root -> data << " ";
+            lowOrderTraversal(root ->left);
+        }
+        void lowOrderTraversal(){
+            lowOrderTraversal(root);
+            cout << endl;
+        }
         void inOrderTraversal(){
             inOrderTraversal(root);
             cout << endl;
@@ -78,7 +88,14 @@ int main(){
     Tree* myList = new Tree();
     int number;
     while( cin >> number){
+        if( number == -1)
+            break;
         myList->insert(number);
     }
+
+    myList->preOrderTraversal();
+    myList->inOrderTraversal();
+    myList->postOrderTraversal();
+    myList->lowOrderTraversal();
     return 0;
 }

@@ -42,6 +42,7 @@ class Vector{
         int& operator[](int index){
             if( index >= size){
                 throw("index is out of bounds");
+                return;
             }
             return data[index];
         }
@@ -72,7 +73,7 @@ int main(){
     }
     dataList.print();
     cout << endl;
-    for (int i = 10; i <= 20; i++)
+    for (int i = 10; i <= 21; i++)
     {
         dataList[i] = (i * 2);
     }
