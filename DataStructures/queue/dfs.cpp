@@ -1,6 +1,5 @@
 #include <iostream>
 #include <queue>
-#include <stack>
 
 using namespace std;
 
@@ -89,31 +88,6 @@ class Tree{
                 }
             }
         }
-
-        void rightOrderTraversal(Node* root){
-            if( root == nullptr) return;
-            stack<Node*> stack;
-            stack.push(root);
-
-            while( !stack.empty() ){
-                Node* consideredNode = stack.top();
-                
-                cout << consideredNode->data << " ";
-                stack.pop();
-
-                if( consideredNode->left != nullptr){
-                    stack.push(consideredNode->left);
-                }
-                if( consideredNode->right != nullptr){
-                    stack.push(consideredNode->right);
-                }
-            }
-        }
-
-        void rightOrderTraversal(){
-            rightOrderTraversal(root);
-            cout << endl;
-        }
 };
 
 
@@ -132,8 +106,6 @@ int main(){
     myList->childOrderTraversal();
     cout << "postOrderTraversal" << endl;
     myList->postOrderTraversal();
-    cout << "rightOrderTraversal" << endl;
-    myList->rightOrderTraversal();
     // myList->lowOrderTraversal();
     // myList->levelTreeOrderTraversal();
     // cout << "Height: " << myList->heightOfTree() << endl;

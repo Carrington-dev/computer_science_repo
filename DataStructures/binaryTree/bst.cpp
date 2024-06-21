@@ -51,6 +51,7 @@ class Tree{
             preOrderTraversal(root);
             cout << endl;
         }
+        
         void inOrderTraversal(Node* root){
             if(root == nullptr) return;
             inOrderTraversal(root ->left);
