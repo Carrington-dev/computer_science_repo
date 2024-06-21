@@ -1,4 +1,5 @@
 #include <iostream>
+#include <queue>
 
 using namespace std;
 
@@ -94,6 +95,36 @@ class Tree{
         int lengthOfTree(){
             return heightOfTree(root, 0) + heightOfTree(root->right, 0);
         }
+        void levelTreeOrderTraversal(){
+            levelTreeOrderTraversal(root);
+            cout << endl;
+        }
+
+        void levelTreeOrderTraversal(Node* root){
+            if( root == nullptr) return;
+            queue<Node*> queue;
+            queue.push(root);
+
+            while( !queue.empty() ){
+                Node* printedNode = queue.front();
+                cout << printedNode->data << " ";
+                queue.pop();
+
+                if ( root->left != nullptr)
+                {
+                    queue.push(printedNode->left);
+                }
+                if ( root->right != nullptr)
+                {
+                    queue.push(printedNode->right);
+                }
+                
+                // levelTreeOrderTraversal(root -> left);
+                // levelTreeOrderTraversal(root -> right);
+            }
+
+
+        }
 };
 
 int main(){
@@ -105,10 +136,11 @@ int main(){
         myList->insert(number);
     }
 
-    myList->preOrderTraversal();
+    // myList->preOrderTraversal();
     myList->inOrderTraversal();
-    myList->postOrderTraversal();
-    myList->lowOrderTraversal();
+    // myList->postOrderTraversal();
+    // myList->lowOrderTraversal();
+    myList->levelTreeOrderTraversal();
     cout << "Height: " << myList->heightOfTree() << endl;
     cout << "Length: " << myList->lengthOfTree() << endl;
     return 0;
