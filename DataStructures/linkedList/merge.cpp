@@ -85,7 +85,25 @@ class LinkedList{
         
 };
 
+Node* merge(Node* head_one, Node* head_two){
+    if( head_one == nullptr ) return head_two;
+    if( head_two == nullptr ) return head_one;
+    Node* result;
+    if( head_one -> data < head_two ->data)
+        {
+            result = head_one;
+            result->next = merge(result, head_two);
+        }
+    else{
+        result = head_two;
+        result->next = merge(head_one, result);
+    }
 
+    return result;
+}
+
+
+/*
 Node* merge(LinkedList* list_one, LinkedList* list_two){
     if(list_one->header == nullptr && list_two == nullptr){
         return nullptr;
@@ -108,6 +126,7 @@ Node* merge(LinkedList* list_one, LinkedList* list_two){
         }
     }
 }
+*/
 
 /*
 1 3 5 7 9 11
@@ -118,15 +137,26 @@ Node* merge(LinkedList* list_one, LinkedList* list_two){
 
 int main(){
     LinkedList* list_one = new LinkedList();
-    for (int i = 1; i <= 20; i++)
+    LinkedList* list_two = new LinkedList();
+    LinkedList* list_three = new LinkedList();
+    for (int i = 0; i <= 20; i+=2)
     {
         list_one->insert(i);
+    }
+    for (int i = 1; i <= 20; i+=2)
+    {
+        list_two->insert(i);
     }
     
     list_one->print();
     cout << endl;
-    list_one->reverse();
-    list_one->print();
+    // list_one->reverse();
+    list_two->print();
+    cout << endl;
+    Node* node = merge(list_one->header, list_two->header);
+    list_three->header = node;
+    // list_three->print(node);
+    cout << node->data << endl;
     cout << endl;
     cout << "The length of a tree is " << list_one->length() << endl;
     return 0;
