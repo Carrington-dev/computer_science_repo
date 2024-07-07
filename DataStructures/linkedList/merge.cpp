@@ -150,7 +150,8 @@ int main(){
     
     list_one->print();
     cout << endl;
-    // list_one->reverse();
+    list_one->reverse();
+    list_two->reverse();
     list_two->print();
     cout << endl;
     Node* node = merge(list_one->header, list_two->header);
@@ -158,6 +159,6 @@ int main(){
     list_three->print(node);
     cout << endl;
     cout << node->data << endl;
-    cout << "The length of a tree is " << list_one->length() << endl;
+    cout << "The length of a tree is " << list_three->length() << endl;
     return 0;
 }
