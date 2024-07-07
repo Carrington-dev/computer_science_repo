@@ -86,17 +86,17 @@ class LinkedList{
 };
 
 Node* merge(Node* head_one, Node* head_two){
+    Node* result = nullptr;
     if( head_one == nullptr ) return head_two;
     if( head_two == nullptr ) return head_one;
-    Node* result;
     if( head_one -> data < head_two ->data)
         {
             result = head_one;
-            result->next = merge(result, head_two);
+            result->next = merge(result->next, head_two);
         }
     else{
         result = head_two;
-        result->next = merge(head_one, result);
+        result->next = merge(head_one, result->next);
     }
 
     return result;
@@ -155,9 +155,9 @@ int main(){
     cout << endl;
     Node* node = merge(list_one->header, list_two->header);
     list_three->header = node;
-    // list_three->print(node);
-    cout << node->data << endl;
+    list_three->print(node);
     cout << endl;
+    cout << node->data << endl;
     cout << "The length of a tree is " << list_one->length() << endl;
     return 0;
 }
