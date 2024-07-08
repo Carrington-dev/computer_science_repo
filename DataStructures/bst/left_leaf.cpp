@@ -56,15 +56,35 @@ class Tree{
 
         void printLeft(Node* head){
             if(head == nullptr) return;
+            
+            printLeft(head->left);
             cout << head->data << " ";
-            print(head->left);
             // print(head->right);
         }
 
-         void printLeft(){
+        void printLeft(){
             cout << "Printing With Pre-Order Traversal left Nodes only" << endl;
             printLeft(root);
             cout << endl;
+        }
+
+        void printRight(){
+            cout << "Printing With Pre-Order Traversal right Nodes only" << endl;
+            printRight(root->right);
+            cout << endl;
+        }
+
+        void printRight(Node* head){
+            if(head == nullptr) return;
+            
+            cout << head->data << " ";
+            printRight(head->right);
+            // print(head->right);
+        }
+
+        void printOutline(){
+            printLeft(root);
+            printRight(root->right);
         }
 };
 
@@ -84,5 +104,7 @@ int main(){
 
     tree->print();
     tree->printLeft();
+    tree->printRight();
+    tree->printOutline();
     return 0;
 }
