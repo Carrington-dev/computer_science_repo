@@ -69,19 +69,20 @@ class Tree{
 };
 
 int main(){
-    Tree* a = new Tree();
-    int c;
-    cin >> c;
-    while( c != -1)
+    Tree* tree = new Tree();
+    int addedNumber;
+    while( cin >> addedNumber)
     {
-        a->insert(c);
-        cin >> c;
+        if( addedNumber == -1){
+            break;
+        }
+        tree->insert(addedNumber);
     }
+
     // 50, 70, 60, 20, 90, 10, 40, 100 -1
     // 25 20 36 10 22 30 40 5 12 28 38 48 -1
 
-
-    a->print();
-    a->printLeft();
+    tree->print();
+    tree->printLeft();
     return 0;
 }
