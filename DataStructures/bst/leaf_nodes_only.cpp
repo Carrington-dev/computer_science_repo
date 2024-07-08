@@ -43,6 +43,13 @@ class Tree{
             print(head->left);
             print(head->right);
         }
+        void printLeafNodes(Node* head){
+            if(head == nullptr) return;
+            if(head->left == nullptr && head->right == nullptr)
+                cout << head->data << " ";
+            printLeafNodes(head->left);
+            printLeafNodes(head->right);
+        }
 
         void print(){
             cout << "Printing With Pre-Order Traversal" << endl;
@@ -55,7 +62,9 @@ class Tree{
         }
 
         void printLeafNodes(){
-            
+            cout << "Printing With printLeafNodes" << endl;
+            printLeafNodes(root);
+            cout << endl;
         }
 };
 
