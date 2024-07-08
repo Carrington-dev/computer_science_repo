@@ -84,6 +84,21 @@ class Tree{
 
         void printAllLeftNode(){
             printAllLeftNode(root, false);
+            cout << endl;
+        }
+
+        void printAllRightNode(Node* head, bool isRightNode){
+            if(head == nullptr) return;
+            if(!isRightNode){
+                cout << head->data << " ";
+            }
+            printAllRightNode(head->left, true);
+            printAllRightNode(head->right, false);
+        }
+
+        void printAllRightNode(){
+            printAllRightNode(root, false);
+            cout << endl;
         }
 
 };
@@ -108,6 +123,7 @@ int main(){
     tree->print();
     // tree->printLeftNodes();
     tree->printAllLeftNode();
+    tree->printAllRightNode();
     // tree->traverseRightItems();
     return 0;
 }
