@@ -23,6 +23,12 @@ This repo also includes practice answers from hackerrank
     * Left Nodes Traversal Only (printout)
     * Right Nodes Traversal Only (printout)
     * Change order traversal
+2. Linked List (Singly)
+    * Insertion
+    * Merge
+    * reversing
+    * Insert at index (to checkout)
+
 ```bash
 https://github.com/Carrington-dev/IDSA
 
