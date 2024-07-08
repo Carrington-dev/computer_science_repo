@@ -73,6 +73,19 @@ class Tree{
             traverseRightNodes(head->right);
         }
 
+        void printAllLeftNode(Node* head, bool isRightNode){
+            if(head == nullptr) return;
+            if(!isRightNode){
+                cout << head->data << " ";
+            }
+            printAllLeftNode(head->left, false);
+            printAllLeftNode(head->right, true);
+        }
+
+        void printAllLeftNode(){
+            printAllLeftNode(root, false);
+        }
+
 };
 
 
@@ -89,9 +102,12 @@ int main(){
 
     // 50, 70, 60, 20, 90, 10, 40, 100 -1
     // 25 20 36 10 22 30 40 5 12 28 38 48 -1
+    // 25 20 36 10 22 23 30 40 5 12 28 38 48 21 24 29 37 47 46 -1
+    // 25 20 36 10 22 30 40 5 12 28 38 48 21 24 23 29 37 47 46 -1
 
     tree->print();
-    tree->printLeftNodes();
+    // tree->printLeftNodes();
+    tree->printAllLeftNode();
     // tree->traverseRightItems();
     return 0;
 }
