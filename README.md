@@ -13,6 +13,16 @@ https://www.uuidgenerator.net/dev-corner/kotlin
 We covered a number of topics here.
 This repo also includes practice answers from hackerrank
 
+### Data Structures
+1. Binary Search Trees
+    * Insertion
+    * Pr-eorder traversal
+    * In-order traversal
+    * Post-order traversal
+    * Outline Traversal
+    * Left Nodes Traversal Only (printout)
+    * Right Nodes Traversal Only (printout)
+    * Change order traversal
 ```bash
 https://github.com/Carrington-dev/IDSA
 
