@@ -17,6 +17,8 @@ This repo also includes practice answers from hackerrank
 https://github.com/Carrington-dev/IDSA
 
 25 20 36 10 22 30 40 5 12 28 38 48 -1
+25 20 36 10 22 30 40 5 12 28 38 48 21 24 23 29 37 47 46 -1
+25 20 36 10 22 23 30 40 5 12 28 38 48 21 24 29 37 47 46 -1
 ```
 
 <!-- Roshan Halwai -->
