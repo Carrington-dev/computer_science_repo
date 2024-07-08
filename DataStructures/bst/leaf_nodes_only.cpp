@@ -66,6 +66,15 @@ class Tree{
             printLeafNodes(root);
             cout << endl;
         }
+
+        int lengthOfTree(){
+            return lengthOfTree(root);
+        }
+
+        int lengthOfTree(Node* root){
+            if(root == nullptr) return 0;
+            return lengthOfTree(root->left) + 1 + lengthOfTree(root->right);
+        }
 };
 
 int main(){
@@ -85,5 +94,6 @@ int main(){
     tree->print();
     tree->printLeafNodes();
     // tree->traverseRightItems();
+    cout << "Length of a tree:  " << tree->lengthOfTree() << endl;
     return 0;
 }
