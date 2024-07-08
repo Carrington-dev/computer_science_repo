@@ -20,13 +20,21 @@ This repo also includes practice answers from hackerrank
     * In-order traversal
     * Post-order traversal
     * Outline Traversal
+        * recursion
+        * using level counter method
     * Left Nodes Traversal Only (printout)
+        * recursion
+        * using level counter method
     * Right Nodes Traversal Only (printout)
     * Change order traversal
     * Level order traversal
-      * using a queue
-      * using level counter method
-      *
+        * using a queue
+        * using level counter method
+        * recursion
+    * Todo
+        * Tree Length
+        * Leaf Node Print Out
+        
 ```bash
 25 20 36 10 22 30 40 5 12 28 38 48 -1
 25 20 36 10 22 30 40 5 12 28 38 48 21 24 23 29 37 47 46 -1
