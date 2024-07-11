@@ -15,7 +15,7 @@ class Solution:
                 else:
                     open = True
             if i in positives:
-                counter -= 1
+                counter += 1
                 if open:
                     open = False
                 else:
