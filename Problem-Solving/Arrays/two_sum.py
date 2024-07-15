@@ -8,16 +8,19 @@ class Solution:
 
         for i in range(len(nums)):
             for j in range(i, len(nums)):
-                if nums[i] + nums[j] == target and [nums[i], nums[j]] not in new_context_main:
-                    if nums[i] < nums[j]:
-                        new_context.add((nums[i], nums[j]))
-                        new_context_main.append([i, j])
-                    else:
-                        new_context.add((nums[j], nums[i]))
-                        new_context_main.append([i, j])
+                if nums[i] + nums[j] == target and i != j:
+                    # print(i, nums[i], j, nums[j])
+                    if (nums[i], nums[j]) not in new_context or (nums[j], nums[i]) not in new_context:
 
-        print(new_context_main)
-        
+                        if nums[i] < nums[j]:
+                            new_context.add((nums[i], nums[j]))
+                            new_context_main.append([i, j])
+                        else:
+                            new_context.add((nums[j], nums[i]))
+                            new_context_main.append([i, j])
+
+        # print(new_context_main)
+
         for i in new_context_main:
             if i[0] != i[1]:
                 return i
@@ -26,3 +29,4 @@ class Solution:
     
 
 print(Solution().twoSum([0,4,3,0], 0))
+print(Solution().twoSum([0,4,3,0], 7))
