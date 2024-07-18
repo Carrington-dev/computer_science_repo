@@ -43,9 +43,6 @@ class ListNode:
 listt = LinkedList()
 x = int(input())
 while x != -1:
-    # print(x,  x == -1)
-    if x == -1:
-        break
     listt.insert(listt.head, x)
     x = int(input())
 
