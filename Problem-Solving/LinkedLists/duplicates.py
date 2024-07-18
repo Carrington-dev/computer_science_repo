@@ -20,6 +20,22 @@ class LinkedList:
             return 
         print(head.val, sep=" ", end=" ")
         self.print(head.next)
+
+    def reverse(self):
+        if self.head == None:
+            return
+        current = self.head
+        prev = None
+
+        while current != None:
+            next = current.next
+            current.next =  prev
+            prev = current
+            current = next
+        
+        self.head = prev
+        return self.head
+
     
     def removeDuplicates(self, head, prev =None):
         if head == None:
@@ -73,6 +89,7 @@ while x != -1:
 
 listt.print(listt.head)
 listt.removeDuplicates(listt.head)
+listt.reverse()
 # listt.removeDuplicatesOther(listt.head, listt.head.next)
 print()
 listt.print(listt.head)
