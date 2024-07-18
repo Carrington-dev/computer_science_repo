@@ -4,6 +4,7 @@ from typing import List
 class Solution:
     def addTwoNumbers(self, digits_one: List[int], digits_two: List[int]) -> List[int]:
         # print("digits_one", digits_one, " digits_two ", digits_two)
+        # print("digits_one", "".join([str(i) for i in digits_one]), " digits_two ", "".join([str(i) for i in digits_two]))
         isSolved = False
         diff  = abs(len( digits_one)  - len(digits_two))
         if len( digits_one)  == len(digits_two):
@@ -46,7 +47,10 @@ class Solution:
 print(Solution().addTwoNumbers([1, 0], [2, 3]))
 print(Solution().addTwoNumbers([0, 1, 9], [6, 2, 3]))
 print(Solution().addTwoNumbers([0, 1, 9], [6, 2, 1]))
-print(Solution().addTwoNumbers([0, 0, 1, 9], [0, 6, 2, 1]))
-print(Solution().addTwoNumbers([0, 0, 0, 0, 1, 9], [0, 6, 2, 1]))
-print(Solution().addTwoNumbers([0, 0, 9, 9, 1, 9], [0, 6, 2, 1]))
-print(Solution().addTwoNumbers([0, 10, 9, 9, 1, 9], [0, 6, 2, 1]))
+# print(Solution().addTwoNumbers([0, 0, 1, 9], [0, 6, 2, 1]))
+# print(Solution().addTwoNumbers([0, 0, 0, 0, 1, 9], [0, 6, 2, 1]))
+# print(Solution().addTwoNumbers([0, 0, 9, 9, 1, 9], [0, 6, 2, 1]))
+# print(Solution().addTwoNumbers([0, 10, 9, 9, 1, 9], [0, 6, 2, 1]))
+# print(Solution().addTwoNumbers([0, 10, 9, 9, 1, 9], [0, 6, 2, 1]))
+# print(Solution().addTwoNumbers([1, 10, 9, 9, 1, 9], [0, 6, 2, 1]))
+# print(Solution().addTwoNumbers([9, 7, 9, 9, 1, 9], [0, 6, 2, 1]))
