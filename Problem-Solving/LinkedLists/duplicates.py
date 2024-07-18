@@ -24,23 +24,34 @@ class LinkedList:
     def removeDuplicates(self, head, prev =None):
         if head == None:
             return head
-        # if head.next and head.val == head.next.val:
-        #     head.next = head.next.next
-        # self.removeDuplicates(head.next)
         if prev != None and head.val == prev.val:
             curr = head
-            while curr.val == prev.val and curr != None and prev != None:
+            while curr.val == prev.val and (curr != None or prev != None):
                 curr = curr.next
+                if curr == None:
+                    break
             prev.next = curr
+        #print(head, head.next)
         self.removeDuplicates(head.next, head)
-        
 
+    def removeDuplicatesOther(self, head, next = None):
+        if head == None:
+            return head
+        if next == None:
+            return head
+        if head.val == next.val:
+            head.next = next.next
+        self.removeDuplicatesOther(next, next.next)    
+
+# 1 1 2 3 3
 
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
     
+    def __str__(self) -> str:
+        return f"{ self.val }"
 
 """
 
@@ -62,5 +73,6 @@ while x != -1:
 
 listt.print(listt.head)
 listt.removeDuplicates(listt.head)
+# listt.removeDuplicatesOther(listt.head, listt.head.next)
 print()
 listt.print(listt.head)
