@@ -16,10 +16,24 @@ class LinkedList:
 
     
     def print(self, head):
-        if head is None:
+        if head == None:
             return 
         print(head.val, sep=" ", end=" ")
         self.print(head.next)
+    
+    def removeDuplicates(self, head, prev =None):
+        if head == None:
+            return head
+        # if head.next and head.val == head.next.val:
+        #     head.next = head.next.next
+        # self.removeDuplicates(head.next)
+        if prev != None and head.val == prev.val:
+            curr = head
+            while curr.val == prev.val and curr != None and prev != None:
+                curr = curr.next
+            prev.next = curr
+        self.removeDuplicates(head.next, head)
+        
 
 
 class ListNode:
@@ -46,4 +60,7 @@ while x != -1:
     listt.insert(listt.head, x)
     x = int(input())
 
+listt.print(listt.head)
+listt.removeDuplicates(listt.head)
+print()
 listt.print(listt.head)
