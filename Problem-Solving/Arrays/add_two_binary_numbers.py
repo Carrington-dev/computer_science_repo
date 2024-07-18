@@ -3,6 +3,10 @@ from typing import List
 
 class Solution:
     def addBinary(self, a: str, b: str) -> str:
+        if a == "0" :
+            return b
+        if b == "0" :
+            return a
         a =  self.addTwoNumbers([int(i) for i in a], [int(i) for i in b])
         return "".join([ str(i) for i in a])
     
@@ -36,8 +40,8 @@ class Solution:
 
         counter = len(new_digits) - 1
         while counter >= 0:
-            if new_digits[counter] >= 10:
-                new_digits[counter] =  new_digits[counter] % 10
+            if new_digits[counter] >= 2:
+                new_digits[counter] =  new_digits[counter] % 2
                 new_digits[counter-1] += 1
             counter -= 1
         while new_digits[0] == 0:
@@ -58,7 +62,9 @@ class Solution:
 # print(Solution().addTwoNumbers([1, 10, 9, 9, 1, 9], [0, 6, 2, 1]))
 # print(Solution().addTwoNumbers([9, 7, 9, 9, 1, 9], [0, 6, 2, 1]))
 
-print(Solution().addBinary("00101", "100"))
-print(Solution().addBinary("101", "100"))
-print(Solution().addBinary("0101", "100"))
-print(Solution().addBinary(a = "1010", b = "1011"))
+# print(Solution().addBinary("00101", "100"))
+# print(Solution().addBinary("101", "100"))
+# print(Solution().addBinary("0101", "100"))
+# print(Solution().addBinary(a = "1010", b = "1011"))
+# print(Solution().addBinary(a = "11", b = "01"))
+print(Solution().addBinary(a = "0", b = "0"))

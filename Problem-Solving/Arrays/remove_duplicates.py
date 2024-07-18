@@ -5,7 +5,6 @@ class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         list_set = list(set(nums))  
         nums.clear()
-        print(nums)
         return (list_set)
     
 
