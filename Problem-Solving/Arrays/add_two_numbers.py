@@ -47,6 +47,7 @@ class Solution:
 print(Solution().addTwoNumbers([1, 0], [2, 3]))
 print(Solution().addTwoNumbers([0, 1, 9], [6, 2, 3]))
 print(Solution().addTwoNumbers([0, 1, 9], [6, 2, 1]))
+print(Solution().addTwoNumbers([9, 1, 9], [6, 2, 1]))
 # print(Solution().addTwoNumbers([0, 0, 1, 9], [0, 6, 2, 1]))
 # print(Solution().addTwoNumbers([0, 0, 0, 0, 1, 9], [0, 6, 2, 1]))
 # print(Solution().addTwoNumbers([0, 0, 9, 9, 1, 9], [0, 6, 2, 1]))
