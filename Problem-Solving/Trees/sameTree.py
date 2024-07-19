@@ -109,15 +109,36 @@ Different
 25 23 34
 
 
-# class Solution:
-#     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
-#         if p == None and q == None:
-#             return False
-#         if p == None or q == None:
-#             return False
-#         if p.val != q.val:
-#             return False
-#         self.isSameTree(p.left, q.left)
-#         self.isSameTree(p.right, q.right)
+
+        
+
+    def compareNodes(head_one: TreeNode, head_two: TreeNode):
+        if head_one == None and head_two == None:
+            return True
+        if (head_one != None and head_two == None) or (head_one == None and head_two != None):
+            return False
+        if head_one.val != head_two.val:
+            return False
+        output1 = compareNodes(head_one.left, head_two.left)
+        output2 = compareNodes(head_one.right, head_two.right)
+        return output1 == output2
 
 """
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+class Solution:
+    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+        if not p:
+            return not q
+        elif not q:
+            return not p
+        elif not q and not p:
+            return True
+
+        return p and q and p.val==q.val and self.isSameTree(p.left,q.left) and self.isSameTree(p.right,q.right)
