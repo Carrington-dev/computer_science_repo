@@ -16,6 +16,14 @@ class BinaryTree:
         else:
             head.right = self.insert(head.right, x)
         return head
+
+    def maxDepth(self, root, length = 0):
+        if root == None:
+            return length
+        left = self.maxDepth(root.left, length + 1)
+        right = self.maxDepth(root.right, length + 1)
+        return left if right < left else right
+    
     
     def print(self, head):
         if head == None:
@@ -54,16 +62,16 @@ while x != -1:
     x = int(input())
 
 
-x = int(input())
-while x != -1:
-    listt2.insert(listt2.head, x)
-    x = int(input())
-
-listt.print(listt.head)
-print()
-listt2.print(listt2.head)
-print()
-print(compareNodes(listt.head, listt2.head))
+# x = int(input())
+# while x != -1:
+#     listt2.insert(listt2.head, x)
+#     x = int(input())
+print(listt.maxDepth(listt.head))
+# listt.print(listt.head)
+# print()
+# listt2.print(listt2.head)
+# print()
+# print(compareNodes(listt.head, listt2.head))
 
 """
 25
