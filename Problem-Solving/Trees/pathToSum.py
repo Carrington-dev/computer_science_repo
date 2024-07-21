@@ -27,9 +27,11 @@ class BinaryTree:
     def pathToSum(self, root, targetSum = 0, summing = 0):
         if root == None:
             return summing
+        if targetSum == summing:
+            return True
         left = self.pathToSum(root.left, targetSum, summing + root.val)
         right = self.pathToSum(root.right, targetSum, summing + root.val)
-        print(right, left)
+        print("left", left, "right", right)
         return left == targetSum or right == targetSum
     
     def print(self, head):
@@ -47,17 +49,6 @@ class TreeNode:
     
     def __str__(self) -> str:
         return f"{ self.val }"
-    
-def compareNodes(head_one: TreeNode, head_two: TreeNode):
-    if head_one == None and head_two == None:
-        return True
-    if (head_one != None and head_two == None) or (head_one == None and head_two != None):
-        return False
-    if head_one.val != head_two.val:
-        return False
-    output1 = compareNodes(head_one.left, head_two.left)
-    output2 = compareNodes(head_one.right, head_two.right)
-    return output1 == output2
 
 
 listt = BinaryTree()
@@ -68,18 +59,8 @@ while x != -1:
     listt.insert(listt.head, x)
     x = int(input())
 
-
-# x = int(input())
-# while x != -1:
-#     listt2.insert(listt2.head, x)
-#     x = int(input())
-print(listt.maxDepth(listt.head))
-print(listt.pathToSum(listt.head, 22))
-# listt.print(listt.head)
-# print()
-# listt2.print(listt2.head)
-# print()
-# print(compareNodes(listt.head, listt2.head))
+# print(listt.maxDepth(listt.head))
+print(listt.pathToSum(listt.head, targetSum=22))
 
 """
 25
@@ -141,20 +122,3 @@ Different
 
 """
 
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-class Solution:
-    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
-        if not p:
-            return not q
-        elif not q:
-            return not p
-        elif not q and not p:
-            return True
-
-        return p and q and p.val==q.val and self.isSameTree(p.left,q.left) and self.isSameTree(p.right,q.right)
