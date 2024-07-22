@@ -78,4 +78,7 @@ https://github.com/Carrington-dev/IDSA
 https://www.geeksforgeeks.org/binary-search-tree-data-structure/
 ```
 
+```bash
+https://python-book.softuni.org/chapter-11-tricks-and-hacks.html
+```
 <!-- Roshan Halwai -->

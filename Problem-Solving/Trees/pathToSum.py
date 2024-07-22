@@ -1,4 +1,5 @@
 # Definition for singly-linked list.
+from collections import deque
 from typing import Optional
 
 class BinaryTree:
@@ -40,6 +41,23 @@ class BinaryTree:
         print(head.val, sep=" ", end=" ")
         self.print(head.left)
         self.print(head.right)
+    
+    def printLevelOrder(self, head, level=0):
+        if head == None:
+            return
+        
+        queue = deque()
+        queue.append(head)
+        while len(queue) > 0:
+            consideredNode = (queue.popleft())
+            print(consideredNode, sep=" ", end=" ")
+            if consideredNode.left != None:
+                queue.append(consideredNode.left)
+        
+            if consideredNode.right != None:
+                queue.append(consideredNode.right)
+        return
+        
 
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
@@ -52,7 +70,7 @@ class TreeNode:
 
 
 listt = BinaryTree()
-listt2 = BinaryTree()
+# listt2 = BinaryTree()
 
 x = int(input())
 while x != -1:
@@ -60,8 +78,8 @@ while x != -1:
     x = int(input())
 
 # print(listt.maxDepth(listt.head))
-print(listt.pathToSum(listt.head, targetSum=22))
-
+# print(listt.pathToSum(listt.head, targetSum=22))
+listt.printLevelOrder(listt.head)
 """
 25
 20
