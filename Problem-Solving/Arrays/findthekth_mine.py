@@ -1,9 +1,11 @@
-from itertools import product
+from itertools import permutations, product
 
 
 def find_the_kth(n, k):
-    arr = [ list(range(1, n + 1)) for i in range(n) ]
-    pr = product(*arr)
-    print({i for i in pr})
+    a = permutations(n)
+    for i in a:
+        print(list(i))
+    return list(a)
 
-find_the_kth(4, 24)
+for i in range(6):
+    print(find_the_kth([2, 3, 4], i))

@@ -39,6 +39,21 @@ class BinaryTree:
         self.print(head.left)
         self.print(head.right)
 
+    def printByLevel(self, head=None, levelNeeded=0):
+        print("Printing level", levelNeeded)
+        self.printLevelOrderTraversal(head, 0, counterNeeded=levelNeeded)
+        print()
+        print("Printing level Done", levelNeeded)
+
+    
+    def printLevelOrderTraversal(self, head=None, level = 0, counterNeeded = 0):
+        if head == None:
+            return
+        if level == counterNeeded:
+            print(head.val, sep=" ", end=" ")
+        self.printLevelOrderTraversal(head.left, level + 1, counterNeeded)
+        self.printLevelOrderTraversal(head.right, level + 1, counterNeeded)
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -73,9 +88,13 @@ while x != -1:
 # while x != -1:
 #     listt2.insert(listt2.head, x)
 #     x = int(input())
-print(listt.maxDepth(listt.head))
-print(listt.pathToSum(listt.head, 22))
+# print(listt.maxDepth(listt.head))
+# print(listt.pathToSum(listt.head, 22))
 # listt.print(listt.head)
+listt.printByLevel(listt.head, 3)
+listt.printByLevel(listt.head, 2)
+listt.printByLevel(listt.head, 1)
+listt.printByLevel(listt.head, 0)
 # print()
 # listt2.print(listt2.head)
 # print()
