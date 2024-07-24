@@ -8,3 +8,4 @@ class Solution:
         return counter[1]
     
 print(Solution().singleNumber(nums = [4,1,2,1,2]))
+print(Solution().singleNumber(nums = [2,2,3,2]))
