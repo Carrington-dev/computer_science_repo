@@ -52,3 +52,13 @@ class Tree:
             if top.right != None:
                 queue.append(top.right)
                 this_level.append(top.right)
+        return this_level
+
+firstTree = Tree()
+while value := int(input()):
+    if value == -1:
+        break
+    firstTree.insert(firstTree.head, value)
+
+firstTree.print(firstTree.head)
+
