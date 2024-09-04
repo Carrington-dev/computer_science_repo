@@ -1,6 +1,10 @@
 class Solution:
     def tribonacci(self, n: int) -> int:
         tribonacci_items = [0, 1, 1]
+        if n <= 1:
+            return n
+        elif n == 2:
+            return 1
         for i in range(3, n + 1):
             tribonacci_items.append(tribonacci_items[i - 1] + tribonacci_items[i - 2] + tribonacci_items[i - 3])
         
