@@ -4,7 +4,7 @@ Here’s a well-structured `README.md` template tailored to a Computer Science u
 
 # 📚 Computer Science Undergraduate Course Repository  
 
-Welcome to the **[Course Name]** GitHub repository! This repository is intended to support learning, collaboration, and code sharing for students enrolled in the course.
+Welcome to the **BSc Computer Science** GitHub repository! This repository is intended to support learning, collaboration, and code sharing for students enrolled in the course.
 
 ## 🗂️ Table of Contents
 - [About the Course](#about-the-course)  
@@ -19,13 +19,15 @@ Welcome to the **[Course Name]** GitHub repository! This repository is intended 
 ---
 
 ## 🔍 About the Course  
-This repository contains materials, assignments, and code examples for **[Course Name]** at **[University Name]**. The primary focus of this course is to develop foundational knowledge and skills in **[key topics]**, such as:
+This repository contains materials, assignments, and code examples for **BSc Computer Science** at **University Of The Witwarersrand**. The primary focus of this course is to develop foundational knowledge and skills in **[key topics]**, such as:
 
-- **Programming Languages:** [e.g., Python, C++]
+- **Programming Languages:** [e.g., Python, C++, Java, etc]
 - **Data Structures & Algorithms**
 - **Artificial Intelligence and Machine Learning**
 - **Operating Systems and Networks**
 - **Databases and Software Engineering Principles**
+- **System Design**
+- **Mobile Computing**
 
 ---
 
