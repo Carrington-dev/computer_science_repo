@@ -33,7 +33,7 @@ This repository contains materials, assignments, and code examples for **BSc Com
 
 ## 🗂️ Repository Structure  
 ```plaintext
-📦 [repo-name]  
+📦 computer_science_repo  
  ├── 📁 lectures/        # Lecture slides, notes, and supplementary materials  
  ├── 📁 assignments/     # Programming assignments and problem sets  
  ├── 📁 projects/        # Group and individual project submissions  
