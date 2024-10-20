@@ -47,8 +47,8 @@ This repository contains materials, assignments, and code examples for **BSc Com
 ## 🚀 How to Use This Repository  
 1. **Clone the repository:**  
    ```bash
-   git clone https://github.com/[username]/[repo-name].git
-   cd [repo-name]
+   git clone https://github.com/Carrington-dev/computer_science_repo.git
+   cd computer_science_repo
    ```
 
 2. **Explore by folder:** Browse relevant folders for assignments, projects, or lecture materials.  
