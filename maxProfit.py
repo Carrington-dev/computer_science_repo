@@ -7,13 +7,13 @@ class Solution:
         index = 0
         profit = 0
 
-        for i in range(len(prices)):
+        for i in range(1, len(prices)):
             if prices[i] < minimum:
                 minimum = prices[i]
                 index = i
             
         
-        profit = max(prices[index:]) - minimum
+            profit = max(profit, max(prices[index:]) - minimum)
 
         return profit
 
