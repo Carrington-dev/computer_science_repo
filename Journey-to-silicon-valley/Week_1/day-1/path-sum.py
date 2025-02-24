@@ -1,4 +1,5 @@
 # Definition for a binary tree node.
+# Day 1 ( 19 February 2025)
 from typing import Optional
 
 class TreeNode:
@@ -10,4 +11,5 @@ class TreeNode:
 
 class Solution:
     def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
-        
+
+
