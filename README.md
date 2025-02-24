@@ -1,7 +1,3 @@
-Here’s a well-structured `README.md` template tailored to a Computer Science undergraduate course repository. You can adapt the sections according to your specific course, goals, or structure.
-
----
-
 # 📚 Computer Science Undergraduate Course Repository  
 
 Welcome to the **BSc Computer Science** GitHub repository! This repository is intended to support learning, collaboration, and code sharing for students enrolled in the course.
