@@ -12,8 +12,8 @@ class Solution:
                 minimum = prices[i]
                 index = i
             
-        
-            profit = max(profit, max(prices[index:]) - minimum)
+            new_profit = max(prices[index:]) - minimum
+            profit = profit if profit > (new_profit) else new_profit
 
         return profit
 
