@@ -14,7 +14,6 @@ from typing import List
         # return subsets
 class Solution:
     def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
-        subsets =  list(combinations(nums, 1))
         all_numbers = [[(j) for j in set(combinations(nums, i)) ] for i in range(len(nums) + 1) ]
         all_numbers_list = set()
         for i in all_numbers:
