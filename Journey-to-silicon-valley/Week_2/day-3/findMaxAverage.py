@@ -1,11 +1,22 @@
 from typing import List
 
-
+#  Not the Fastest Method
 class Solution:
     def findMaxAverage(self, nums: List[int], k: int) -> float:
         max_sum = sum(nums[:k])
         for i in range(0, len(nums) - k + 1):
             other_sum =  sum(nums[i:k+i])
+            if other_sum > max_sum:
+                max_sum = other_sum
+        return max_sum / k
+#  Not the Fastest Method
+class Solution:
+    def findMaxAverage(self, nums: List[int], k: int) -> float:
+        max_sum = sum(nums[:k])
+        for i in range(0, len(nums) - k + 1):
+            other_sum =  0
+            for j in nums[i:k+i]:
+                other_sum += j
             if other_sum > max_sum:
                 max_sum = other_sum
         return max_sum / k
