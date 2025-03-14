@@ -1,28 +1,28 @@
-from typing import Optional
-
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 
 class Solution:
     def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if head == None:
+            return
+        if head.next == None:
+            return
         count = 0
         current = head
+        context = []
         while current != None:
+            context.append(current)
             current = current.next
             count += 1
         
-        middle = count // 2
-        new_current = head
-        new_prev = None
-        new_count = 0
-        while current != None:
-            next = new_current.next
-            new_prev = current
-            current = next
-            count += 1
-            if new_count == count:
-                break
-        new_prev.next = current.next
+        # print([ i.val for i in context].pop(count // 2))
+        try:
+            context[count // 2 - 1].next = context[count // 2 - 1].next.next
+        except:
+            pass
+        return head
+        
         
