@@ -1,10 +1,6 @@
 
 class Solution:
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
-        if head == None:
-            return
-        if head.next == None:
-            return
         
         length = 0
         current = head
@@ -14,8 +10,9 @@ class Solution:
             current = current.next
             length += 1
         
-        # print([ i.val for i in context].pop(count // 2))
         endPoint = length - n - 1
+        if endPoint == -1:
+            return head.next
         context[endPoint].next = context[endPoint].next.next
         return head
         
