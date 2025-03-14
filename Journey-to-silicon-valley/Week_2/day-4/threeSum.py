@@ -10,7 +10,7 @@ class Solution:
             for j in range(len(nums)):
                 for k in range(len(nums)):
                     if i != j and i != k and j != k and nums[i] + nums[j] + nums[k] == 0:
-                        context.add((nums[i], nums[j], nums[k]))
+                        context.add(tuple(sorted([nums[i], nums[j], nums[k]])))
         
         return list(context)
 
