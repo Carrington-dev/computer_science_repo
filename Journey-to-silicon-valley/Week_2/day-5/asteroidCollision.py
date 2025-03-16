@@ -1,20 +1,49 @@
 from collections import deque
 from typing import List
 
+"""
+The app should run until there is no possible collision, 
+that is until all asteroids are running the same direction
+"""
 
 class Solution:
     def asteroidCollision(self, asteroids: List[int]) -> List[int]:
-        context = deque()
-        context.append(asteroids[0])
-        for i in asteroids[1:]:
+        left = right = 0
+
+        for i in asteroids:
             if i < 0:
-                if abs(i) < context[-1]:
-                    pass
+                left += 1
+            if i > 0:
+                right += 1
+                
+        while not (right == 0 or left == 0):
+            try:
+                if asteroids[-1] < 0 and (asteroids[-2] > 0) :
+                    if abs(asteroids[-1]) < abs(asteroids[-2]):
+                        asteroids.pop()
+                        left -= 1
+                    elif abs(asteroids[-1]) > abs(asteroids[-2]):
+                        asteroids[-2] = asteroids[-1]
+                        asteroids.pop()
+                        right -= 1
+                    else:
+                        asteroids.pop()
+                        asteroids.pop()
+                        right -= 1
+                        left -= 1
+
+            except:
+                pass
+            
+            
 
         return asteroids
 
 
 print(Solution().asteroidCollision([5, 10, -5]))
+print(Solution().asteroidCollision(asteroids = [8,-8]))
+print(Solution().asteroidCollision([10,2,-5]))
+print(Solution().asteroidCollision([-2,-1,1,2]))
 
 
 """
