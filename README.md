@@ -92,7 +92,7 @@ This repository is licensed under the **[License Name]**. See the [LICENSE](LICE
 
 ## 🙏 Acknowledgements  
 Special thanks to:  
-- **[Professor Name]** for course materials and guidance  
+- **[Wits Lecturers]** for course materials and guidance  
 - **University of [Wits/Cape Town/etc.]** for providing a great learning environment  
 - **Contributors** who have helped improve this repository
 
