@@ -1,3 +1,4 @@
+# 202. Happy Number
 class Solution:
     def isHappy(self, n: int) -> bool:
         summed =  sum([int(number) * int(number) for number in str(n)])
