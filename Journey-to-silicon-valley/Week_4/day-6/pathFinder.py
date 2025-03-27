@@ -6,6 +6,7 @@ from typing import List
 class Solution:
     def __init__(self, x, y):
         self.grid = None
+        self.start = (x, y)
 
     def printGrid(self):
         for i in self.grid:
@@ -35,7 +36,7 @@ class Solution:
         parent = {}
         previous = start_x, start_y
         while len(stack) > 0:
-            x, y = stack.pop()
+            x, y = stack.popleft()
             context[(x, y)] = True
             neighbours = getNeighbours(x, y, len(grid), len(grid[0]))
             # print(neighbours)
