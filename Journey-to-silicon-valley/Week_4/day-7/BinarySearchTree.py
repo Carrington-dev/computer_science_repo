@@ -14,7 +14,7 @@ class BinaryTree:
         print(root.val, sep = " ", end = " ")
         self.printTree(root.left)
         self.printTree(root.right)
-        print()
+        # print()
     
     def insertTreeNode(self, root, val):
         if root == None:
@@ -26,6 +26,7 @@ class BinaryTree:
             root.right = self.insertTreeNode(root.right, val)
         else:
             root.left = self.insertTreeNode(root.left, val)
+        return root
     
     def insertAsList(self, array):
         for i in array:
