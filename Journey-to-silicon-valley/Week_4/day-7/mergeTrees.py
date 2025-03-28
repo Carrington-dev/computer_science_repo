@@ -1,5 +1,6 @@
 # 617. Merge Two Binary Trees
 # Definition for a binary tree node.
+
 from typing import Optional
 
 
@@ -8,6 +9,7 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
+
 class Solution:
     def mergeTrees(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> Optional[TreeNode]:
         if root1 == None:
