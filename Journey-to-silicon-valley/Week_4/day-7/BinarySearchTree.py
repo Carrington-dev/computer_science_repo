@@ -1,3 +1,6 @@
+from typing import Optional
+
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -31,7 +34,10 @@ class BinaryTree:
         for i in array:
             self.insertTreeNode(self.root, i)
     
-    
+# 617. Merge Two Binary Trees
+class Solution:
+    def mergeTrees(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> Optional[TreeNode]:
+        pass
 
 enteredValues = list(map(int, input().strip().split()))
 print(enteredValues)
