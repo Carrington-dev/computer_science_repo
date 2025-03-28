@@ -36,8 +36,18 @@ class BinaryTree:
     
 # 617. Merge Two Binary Trees
 class Solution:
+    def __init__(self):
+        self.root
+    
+    def insertNode(self, root1, root2):
+        if self.root == None:
+            self.root = TreeNode((root1.val if root1 is not None else 0)  + (root2.val if not root2 != None else 0))
+            return self.root
+        
     def mergeTrees(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> Optional[TreeNode]:
-        pass
+        self.insertNode(root1, root2)
+        return self.root
+        
 
 enteredValues = list(map(int, input().strip().split()))
 print(enteredValues)
