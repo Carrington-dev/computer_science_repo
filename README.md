@@ -86,7 +86,7 @@ Contributions to this repository are welcome! Please follow these guidelines:
 ---
 
 ## 📜 License  
-This repository is licensed under the **[License Name]**. See the [LICENSE](LICENSE) file for more information.
+This repository is licensed under the **[MIT LICENCE]**. See the [LICENSE](LICENSE) file for more information.
 
 ---
 
